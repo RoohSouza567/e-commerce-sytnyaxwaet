@@ -1,0 +1,107 @@
+/*
+  Reset CSS - baseado no "modern-css-reset" de Andy Bell
+  Objetivo: normalizar estilos do navegador e melhorar acessibilidade.
+*/
+
+:where(html) {
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove margens padrão */
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Definições base */
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: transparent;
+  color: inherit;
+}
+
+/* Imagens e mídias responsivas */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form controls seguem a fonte do corpo */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Links sem estilo por padrão */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Botões e elementos com role="button" recebem cursor */
+:where(button, [role="button"]) {
+  cursor: pointer;
+}
+
+/* Remover decoração padrão de listas */
+ol, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Elementos sem utilidade visual para leitores */
+[hidden] {
+  display: none !important;
+}
+
+/* Tabelas com colapsamento por padrão */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Abreviações */
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+/* Acessibilidade: reduz animações se preferido */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Forçar fontes ligadas a herdar tamanho em iOS */
+button, input[type="button"], input[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* Evita que elementos form quebrem layout por padrão */
+textarea {
+  resize: vertical;
+}
+
+/* Definição de base para foco visível */
+:where(:focus-visible) {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+/* Pequenas regras utilitárias adicionais */
+:where(svg, img) { max-height: 100%; }
